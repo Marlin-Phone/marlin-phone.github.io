@@ -91,7 +91,7 @@ page-mathjax: false
 # Friends
 friends:
   [
-    #{ title: "乱序（Midare）", href: "http://mida.re/" },
+    { title: "雨宮雪乃-iamyukino", href: "https://iamyukino.github.io/zh-CN" },
     #{ title: "Ebn Zhang", href: "https://ebnbin.dev/" },
     #{ title: "Kun Qian", href: "http://kunq.me" },
     #{ title: "Sherry Woo", href: "https://sherrywoo.me/" },
