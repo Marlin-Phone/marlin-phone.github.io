@@ -1,15 +1,15 @@
-# Site settings
-title: Marlin Blog
+# 网站设置
+title: Marlin's Blog
 SEOTitle: Marlin的博客 | Marlin's Blog
-header-img: img/home-bg.jpg
-email: marlin-phone@outlook.com
-description: "这里是 @Marlin 的个人博客，与你一起发现更大的世界 | 要做一个有 swag 的程序员"
-keyword: "Marlin, Marlin的博客, Marlin Blog, 博客, 个人网站, 互联网, Web, JavaScript, React, React Native, 前端, 设计"
-url: "https://marlin-phone.github.io" # your host, for absolute URL
-baseurl: "" # for example, '/blog' if your blog hosted on 'host/blog'
+header-img: img/home-bg.jpg #这行代码的作用 是在首页显示一个图片，这个图片会覆盖到导航栏下面，所以你应该把你的logo放在img文件夹下面，然后在这里填写img的名字，如下面的'img/home-bg.jpg'  
+email: marlin-phone@outlook.com 
+description: "这里是 @Marlin 的个人博客，与你一起发现更大的世界 | 本博客正在建设中，内容不全还请见谅"
+keyword: "Marlin, Marlin的博客, Marlin Blog, 博客, 个人网站, 互联网, Web, JavaScript, React, React Native, 前端, 设计" 
+url: "https://marlin-phone.github.io" # your host, for absolute URL 
+baseurl: "" # for example, '/blog' if your blog hosted on 'host/blog' 作用：是在你的网站上建立子文件夹，比如在你的网站上建立一个博客，那么你的博客的url就是你的主机名加上子文件夹的名字，比如 'mywebsite.com/blog'
 
-# Publish posts or collection documents with a future date.
-future: true
+# Publish posts or collection documents with a future date. 
+future: true 
 
 # SNS settings
 RSS: false
@@ -17,7 +17,8 @@ weibo_username:
 zhihu_username: 
 github_username: Marlin-Phone
 twitter_username: 
-facebook_username: 
+facebook_username:
+bilibili_username: 是一匹好马 
 #linkedin_username:  firstname-lastname-idxxxx
 
 # Build settings
@@ -25,7 +26,7 @@ facebook_username:
 highlighter: rouge
 permalink: pretty
 paginate: 10
-exclude:
+exclude: #作用：忽略的文件
   [
     "less",
     "node_modules",
@@ -34,9 +35,9 @@ exclude:
     "README.md",
     "README.zh.md",
   ]
-anchorjs: true # if you want to customize anchor. check out line:181 of `post.html`
+anchorjs: true # if you want to customize anchor. check out line:181 of `post.html` 作用：为了支持github pages，需要自己添加的配置，不然会报错
 # If you have timezone issue (e.g. #68) in China, uncomment to use this:
-#timezone: CN
+timezone: CN #作用：解决时区问题
 
 # Gems
 # from PR#40, to support local preview for Jekyll 3.0
@@ -59,22 +60,22 @@ kramdown:
       start_line: 1
 
 # Disqus settings
-disqus_username: hux
+disqus_username:  #作用：填写你自己的 disqus 账号 disque账号是什么，可以到disqus的官网查看，https://disqus.com
 
 # Netease settings
-netease_comment: false
+netease_comment: false #作用：是否开启网易云跟帖
 
 # Analytics settings
 # Baidu Analytics
-# ba_track_id: [your track id]
+ba_track_id: 0babd084cc099f7bb72cb9bce081d978 #作用：填写你自己的百度统计，可以到百度的官网查看，https://tongji.baidu.com
 
 # Google Analytics
-ga_track_id: "UA-49627206-1" # Format: UA-xxxxxx-xx
-ga_domain: huangxuan.me
+# ga_track_id: "UA-49627206-1" # Format: UA-xxxxxx-xx
+# ga_domain: huangxuan.me
 
-# Sidebar settings
+# Sidebar settings 作用：设置侧边栏
 sidebar: true # whether or not using Sidebar.
-sidebar-about-description: "要做一个有 swag 的程序员"
+sidebar-about-description: "Marlin's Blog | 正在建设中······"
 sidebar-avatar: https://raw.githubusercontent.com/Marlin-Phone/Marlin-Phone.github.io/0689be61d135cfcd5959e9726afb5111b0e69764/img/profile%20picture.jpg # use absolute URL, seeing it's used in both `/` and `/about/`
 
 # Featured Tags
