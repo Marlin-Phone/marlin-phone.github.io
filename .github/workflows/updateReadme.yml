@@ -1,0 +1,52 @@
+name: Sync Profile to README
+
+on:
+  push:
+    branches: ["master"]
+    paths:
+      - '_includes/about/zh.md'  # 精确路径匹配
+  pull_request:
+    branches: ["master"]
+
+jobs:
+  sync-readme:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # 需要写权限
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Clean and prepare README
+      run: |
+        # 保留自定义头部（如果有）
+        if [ -f README.md ]; then
+          awk '/<!-- AUTO-GENERATED CONTENT START -->/{exit} 1' README.md > TEMP_HEADER
+        else
+          echo "# My Tech Profile" > TEMP_HEADER
+        fi
+        echo -e "\n<!-- AUTO-GENERATED CONTENT START -->" >> TEMP_HEADER
+
+    - name: Inject filtered content
+      run: |
+        # 过滤Liquid模板语法并追加内容
+        sed '/^{%/,/%}/d' _includes/about/zh.md >> TEMP_HEADER
+        echo -e "\n<!-- AUTO-GENERATED CONTENT END -->" >> TEMP_HEADER
+        mv TEMP_HEADER README.md
+
+    - name: Commit changes
+      run: |
+        git config user.name "README Sync Bot"
+        git config user.email "actions@users.noreply.github.com"
+        git diff --quiet README.md || (git add README.md && git commit -m "📌 Auto-sync profile [skip ci]")
+
+    - name: Push changes
+      if: success()
+      uses: ad-m/github-push-action@v0.6.0
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: master
+        force: false
