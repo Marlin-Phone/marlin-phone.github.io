@@ -1,52 +1,48 @@
-name: Sync Profile to README
+# .github/workflows/full-sync-profile.yml
+name: Full Sync Profile README
 
 on:
   push:
-    branches: ["master"]
+    branches: [main]
     paths:
-      - '_includes/about/zh.md'  # 精确路径匹配
-  pull_request:
-    branches: ["master"]
+      - '_includes/about/zh.md'
+  workflow_dispatch:
 
 jobs:
-  sync-readme:
+  full-update:
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # 需要写权限
+      contents: write
 
     steps:
-    - name: Checkout code
+    - name: Checkout project
       uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
 
-    - name: Clean and prepare README
+    - name: Process content
       run: |
-        # 保留自定义头部（如果有）
-        if [ -f README.md ]; then
-          awk '/<!-- AUTO-GENERATED CONTENT START -->/{exit} 1' README.md > TEMP_HEADER
-        else
-          echo "# My Tech Profile" > TEMP_HEADER
-        fi
-        echo -e "\n<!-- AUTO-GENERATED CONTENT START -->" >> TEMP_HEADER
+        # 1. 过滤Jekyll语法
+        sed '/^{%/,/%}/d' _includes/about/zh.md > profile.md
+        
+        # 2. 添加GitHub识别头（可选）
+        echo -e "# ${{ secrets.PROFILE_REPO }} 的自动档案\n" | cat - profile.md > temp.md
+        mv temp.md profile.md
 
-    - name: Inject filtered content
+    - name: Clone profile repo
+      env:
+        GH_TOKEN: ${{ secrets.PROFILE_REPO_TOKEN }}
       run: |
-        # 过滤Liquid模板语法并追加内容
-        sed '/^{%/,/%}/d' _includes/about/zh.md >> TEMP_HEADER
-        echo -e "\n<!-- AUTO-GENERATED CONTENT END -->" >> TEMP_HEADER
-        mv TEMP_HEADER README.md
+        git clone https://$GH_TOKEN@github.com/${{ secrets.PROFILE_REPO }}/${{ secrets.PROFILE_REPO }}.git profile-repo
 
-    - name: Commit changes
+    - name: Replace README
       run: |
-        git config user.name "README Sync Bot"
-        git config user.email "actions@users.noreply.github.com"
-        git diff --quiet README.md || (git add README.md && git commit -m "📌 Auto-sync profile [skip ci]")
+        # 强制覆盖README
+        mv profile.md profile-repo/README.md
 
-    - name: Push changes
-      if: success()
-      uses: ad-m/github-push-action@v0.6.0
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: master
-        force: false
+    - name: Force push
+      run: |
+        cd profile-repo
+        git config user.name "Marlin-Phone"
+        git config user.email "marlin-phone@outlook.com"
+        git add .
+        git commit -m "🚀 Full replace profile README [skip ci]"
+        git push origin main --force
