@@ -67,9 +67,9 @@
         </span>
       </a>
     </li>
-    {% endif %}{% if site.linkedin_username %}
+    {% endif %}{% if site.bilibili_username %}
     <li>
-      <a target="_blank" href="https://www.space.bilibili.com/{{ site.bilibili_username }}">
+      <a target="_blank" href="https://www.bilibili.com/{{ site.bilibili_username }}">
         <span class="fa-stack fa-lg">
           <i class="fa fa-circle fa-stack-2x"></i>
           <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
@@ -88,3 +88,13 @@
   </li>
   {% endif %}
 </ul>
+{% if site.telegram_username %}
+<li>
+  <a target="_blank" href="https://t.me/{{ site.telegram_username }}">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+    </span>
+  </a>
+</li>
+{% endif %}
