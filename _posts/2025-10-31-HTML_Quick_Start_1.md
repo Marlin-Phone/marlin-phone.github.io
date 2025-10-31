@@ -16,149 +16,224 @@ tags:
 
 ## HTML 基础结构与标签
 
-### HTML 文档结构
+### HTML 标记
 
-HTML 文档由以下部分组成：
-- `<!DOCTYPE>`：文档类型声明，指定 HTML 版本。
-- `<html>`：根元素，包含整个文档。
-- `<head>`：文档头部，包含元信息。
-- `<body>`：文档主体，包含可见内容。
+标记类型分为单标记和双标记：  
+- 单标记例如 `<br>`  
+- 双标记例如 `<p></p>`  
 
-示例：
+标记属性分为一般属性和事件属性：
+- 一般属性例如 `<标记 属性1="属性值" 属性2="属性值">`
+  示例：`<hr size="3" align="center" width="50">`
 
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <title>示例页面</title>
-</head>
-<body>
-  <h1>欢迎</h1>
-</body>
-</html>
-```
+事件属性的值通常是一个 JavaScript 函数。
+示例：`<body onload="check()">`
 
 ### 文件头及功能
 
-`<head>` 中包含：
-- `<title>`：网页标题。
-- `<meta>`：元信息（如字符编码）。
-- `<link>`：外部资源链接（如 CSS）。
-- `<style>`：内联样式。
+`<head>...</head>` 标记对之间的部分称为文件头。
 
+### 子标记
+
+`<title></title>`: 网页摘要信息，利于浏览器解析和搜索引擎搜索。
+
+`<meta>`: 单标记，提供两类元数据描述：  
+- 关于 HTTP 头的描述，描述文档类型和字符编码向浏览器返回信息，以正确显示网页内容: `<meta http-equiv="Content-Type" content="text/html; charset=gb2312">`  
+- 关于页面信息的描述，用于搜索引擎: `<meta name="keywords" content="淘宝，网上购物在线交易，交易市场">`
+
+`<base>`
+`<link>`
+`<style></style>`
+
+#### 标题标签
+
+`<h1>一级标题</h1>`
+`<h2>二级标题</h2>`
+`<h3>三级标题</h3>`
+`<h4>四级标题</h4>`
+`<h5>五级标题</h5>`
+`<h6>六级标题</h6>`
+
+#### 段落标签
+
+`<p>第一段</p>`
+`<p>第二段</p>`
+
+#### 水平线标签
+
+`<hr>`
+`<hr />` - 单个标签的闭合形式（XHTML 写法）  
+两者效果一样，写法不同。  
+所有的单标记都有 `<标记>` 或 `<标记 />` 这两种写法。  
+示例：
+`<hr>`
+
+#### 有序列表标签
+
+`<ol>` 全称为 Ordered List (有序列表)  
+`<li>` 全称为 List Item (列表项)，必须放在 `<ol>` 或 `<ul>` 内。  
 示例：
 
 ```html
-<head>
-  <meta charset="utf-8">
-  <title>示例页面</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
+<ol>
+  <li>列表项1</li>
+  <li>列表项2</li>
+</ol>
 ```
 
-## 常用 HTML 标签
+<ol>
+  <li>列表项1</li>
+  <li>列表项2</li>
+</ol>
 
-### 标题与段落
+#### 无序列表标签
 
-- 标题：`<h1>` ~ `<h6>`
-- 段落：`<p>`
-
-示例：
-
-```html
-<h1>一级标题</h1>
-<p>这是一个段落。</p>
-```
-
-### 列表
-
-- 有序列表：`<ol>`
-- 无序列表：`<ul>`
-- 列表项：`<li>`
-
+`<ul>` 全称为 Unordered List (无序列表)  
 示例：
 
 ```html
 <ul>
-  <li>无序项1</li>
-  <li>无序项2</li>
+  <li>列表项1</li>
+  <li>列表项2</li>
 </ul>
-
-<ol>
-  <li>有序项1</li>
-  <li>有序项2</li>
-</ol>
 ```
 
-### 表格
+<ul>
+  <li>列表项1</li>
+  <li>列表项1</li>
+</ul>
 
-- 表格行：`<tr>`
-- 表格单元格：`<td>`
+#### 定义描述标签
 
+`<dl>` 全称为 Description List (定义列表)  
+`<dt>` 全称为 Definition Term (定义术语/条目)  
+`<dd>` 全称为 Definition Description (定义描述)  
 示例：
+
+```html
+<dl>
+  <dt>咖啡</dt>
+  <dd>一种黑色的热饮料，主要由烘焙咖啡豆制成。</dd>
+</dl>
+```
+<dl>
+  <dt>咖啡</dt>
+  <dd>一种黑色的热饮料，主要由烘焙咖啡豆制成。</dd>
+</dl>
+
+
+#### 表格标签
+
+`<tr>` 全称为 Table Row (表格行)  
+`<td>` 全称为 Table Data (表格数据/单元格)  
 
 ```html
 <table>
   <tr>
-    <td>名称</td>
-    <td>价格</td>
+    <td>百度</td>
+    <td>新浪</td>
   </tr>
   <tr>
-    <td>商品A</td>
-    <td>100元</td>
+    <td>虎扑</td>
+    <td>谷歌</td>
   </tr>
 </table>
 ```
 
-### 图像
+<table>
+  <tr>
+    <td>百度</td>
+    <td>新浪</td>
+  </tr>
+  <tr>
+    <td>虎扑</td>
+    <td>谷歌</td>
+  </tr>
+</table>
 
-- `src`：图片路径。
-- `alt`：替代文本。
-- `title`：提示信息。
+#### 分区标签
+
+`<div>` 全称为 division (分区)
+
+```html
+<body>
+  <div>
+    <h3>标题</h3>
+    <p>内容</p>
+  </div>
+</body>
+```
+
+#### 表单
+
+```html
+<form>
+  <table>
+    <tr>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+  </table>
+</form>
+```
+
+### 实际开发中常用的四种块状结构
+
+1. `div-ul(ol)-li`: 常用于分类导航或菜单等
+2. `div-dl-dt-dd`: 常用于图文混编的场合
+3. `table-tr-td`: 常用于图文布局或显示数据
+4. `form-table-tr-td`: 常用于布局表单
+
+#### 图像标签
+
+`<img>` 全称为 image  
+`src` 表示资源地址（source）  
+`alt` 表示替代文本（alternative text），用于描述图片内容，供屏幕阅读器和图片无法显示时使用  
+`title` 通常在鼠标悬停时显示
+
+```html
+<img src="图片地址" alt="提示文字" title="提示文字">
+```
+
+eg:
+
+```html
+<img src="img\星空.jpg" alt="图片" title="一张图片">
+```
+
+<img src="img\星空.jpg" alt="图片" title="一张图片">
+
+#### 范围标签
 
 示例：
 
 ```html
-<img src="img/starry-sky.jpg" alt="星空" title="夜晚的星空">
+<p>
+  商品价格，仅售
+  <span style="color:red;font-size:70px;">10</span>
+  元
+</p>
 ```
 
-### 表单
+<p>商品价格，仅售
+<span style="color:red;font-size:70px;">10</span>
+元
+</p>
 
-表单用于用户输入：
+#### 换行标签
+
+示例：
 
 ```html
-<form action="/submit" method="post">
-  <label for="name">姓名：</label>
-  <input id="name" name="name" type="text">
-  <button type="submit">提交</button>
-</form>
+第一行<br>第二行
 ```
 
-## 开发实践
+第一行<br>第二行
 
-### 块状结构
+## XHTML 1.0 基本规范
 
-1. `div-ul-li`：导航菜单。
-2. `div-dl-dt-dd`：图文混排。
-3. `table-tr-td`：数据表格。
-4. `form-table-tr-td`：表单布局。
-
-### XHTML 与 HTML5
-
-- XHTML：严格语法，标签必须闭合。
-- HTML5：宽松语法，推荐使用。
-
-示例（HTML5）：
-
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>HTML5 示例</title>
-</head>
-<body>
-  <h1>欢迎</h1>
-</body>
-</html>
-```
+- 标签名和属性名称必须小写
+- HTML 标签必须关闭
+- 属性值必须用引号括起来
+- 标签必须正确嵌套
+- 必须添加文档类型声明
