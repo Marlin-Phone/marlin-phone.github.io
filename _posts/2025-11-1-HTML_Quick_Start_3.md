@@ -192,9 +192,12 @@ cols 和 rows 属性：
 
 ```html
 <frameset cols="20%,*" frameborder="0"> <!-- frameborder属性设置边框宽度 -->
-    <frame src="subframe/nav.html" name="navFrame">
-    <frame src="subframe/home.html" name="contentFrame">
+  <frame src="subframe/nav.html" name="navFrame">
+  <frame src="subframe/home.html" name="contentFrame">
+</frameset>
 ```
+
+> 注意：`<frameset>` 和 `<frame>` 在 HTML5 中已被废弃。建议使用 CSS（例如 Flexbox 或 Grid）进行页面布局，或在需要嵌入页面时使用 `<iframe>`（同时遵循目标站点的安全策略）。
 
 ```html
 <!-- subframe/nav.html -->
