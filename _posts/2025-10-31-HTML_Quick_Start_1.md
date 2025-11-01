@@ -9,7 +9,6 @@ header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
   - HTML
-  - CSS
 ---
 
 # HTML 快速入门

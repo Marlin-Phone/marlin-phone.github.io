@@ -28,8 +28,8 @@ tags:
 <a href="https://marlin-phone.github.io/2025/10/31/HTML_Quick_Start_1/">HTML 快速入门1</a>
 <a href="../../10/31/HTML_Quick_Start_1/">HTML 快速入门1</a>
 ```
-<a href="https://marlin-phone.github.io/2025/10/31/HTML_Quick_Start_1/">HTML 快速入门1</a>
-<a href="../../10/31/HTML_Quick_Start_1/">HTML 快速入门1</a>
+<a href="https://marlin-phone.github.io/2025/10/31/HTML_Quick_Start_1/">HTML 快速入门1</a><br>
+<a href="../../../10/31/HTML_Quick_Start_1/">HTML 快速入门1</a>
 
 target 可以为：
 - `_self`（默认值）：在当前窗口中打开链接。
@@ -48,10 +48,10 @@ target 可以为：
 <a href="https://github.com/marlin-phone" target="_framename">我的 github 主页</a>
 ```
 
-<a href="https://github.com/marlin-phone">我的 github 主页</a>
-<a href="https://github.com/marlin-phone" target="_blank">我的 github 主页</a>
-<a href="https://github.com/marlin-phone" target="_parent">我的 github 主页</a>
-<a href="https://github.com/marlin-phone" target="_top">我的 github 主页</a>
+<a href="https://github.com/marlin-phone">我的 github 主页</a>  
+<a href="https://github.com/marlin-phone" target="_blank">我的 github 主页</a>  
+<a href="https://github.com/marlin-phone" target="_parent">我的 github 主页</a>  
+<a href="https://github.com/marlin-phone" target="_top">我的 github 主页</a>  
 <a href="https://github.com/marlin-phone" target="_framename">我的 github 主页</a>
 
 #### 锚链接(Anchor Link)
@@ -117,10 +117,10 @@ target 可以为：
 
 示例：
 
-空格:&nbsp;
-大于(>):&gt;
-小于(<):&lt;
-引号("):&quot;
+空格:&nbsp;  
+大于(>):&gt;  
+小于(<):&lt;  
+引号("):&quot;  
 版权号:&copy;
 
 ### 表单(Form)
@@ -133,7 +133,7 @@ target 可以为：
 </form>
 ```
 
-action:指定提交后由服务器上哪个程序处理。
+action:指定提交后由服务器上哪个程序处理。  
 method:指定向服务器提交的方法，如`get`、`post`，默认为`get`。
 
 
@@ -145,37 +145,37 @@ method:指定向服务器提交的方法，如`get`、`post`，默认为`get`。
 
 name:控件的名称。
 
-type:指定元素的类型，可以为`text`、`password`、`checkbox`、`radio`、`button`、`image`、`submit`、`file`等。
-文本框`text`：用于输入单行文本。
-<input name="exampleText" type="text" value="示例文本" size="20" maxlength="50">
-密码框`password`：用于输入密码，输入内容以掩码显示。
-<input name="examplePassword" type="password" value="mypassword" size="20" maxlength="50">
-复选框`checkbox`：用于输入多项选择，用户可以选择多个选项。
-<input name="exampleCheckbox" type="checkbox" value="option1">足球
-<input name="exampleCheckbox" type="checkbox" value="option2">篮球
-<input name="exampleCheckbox" type="checkbox" value="option3">排球
-单选框`radio`：用于输入单项选择，用户只能选择一个选项。
-<input name="exampleRadio" type="radio" value="option1" checked>男
-<input name="exampleRadio" type="radio" value="option2">女
-按钮`button`：用于自定义按钮，通常配合JavaScript使用。
-<input name="exampleButton" type="button" value="点击我">
-图片按钮`image`：用于提交表单的图片按钮。
-<input name="exampleImage" type="image" src="button.png" alt="提交">
-提交按钮`submit`：用于提交表单。
-<input name="exampleSubmit" type="submit" value="提交表单">
-文件上传框`file`：用于上传文件。
+type:指定元素的类型，可以为`text`、`password`、`checkbox`、`radio`、`button`、`image`、`submit`、`file`等。  
+文本框`text`：用于输入单行文本。  
+<input name="exampleText" type="text" value="示例文本" size="20" maxlength="50">  
+密码框`password`：用于输入密码，输入内容以掩码显示。  
+<input name="examplePassword" type="password" value="mypassword" size="20" maxlength="50">  
+复选框`checkbox`：用于输入多项选择，用户可以选择多个选项。  
+<input name="exampleCheckbox" type="checkbox" value="option1">足球  
+<input name="exampleCheckbox" type="checkbox" value="option2">篮球  
+<input name="exampleCheckbox" type="checkbox" value="option3">排球  
+单选框`radio`：用于输入单项选择，用户只能选择一个选项。  
+<input name="exampleRadio" type="radio" value="option1" checked>男  
+<input name="exampleRadio" type="radio" value="option2">女  
+按钮`button`：用于自定义按钮，通常配合JavaScript使用。  
+<input name="exampleButton" type="button" value="点击我">  
+图片按钮`image`：用于提交表单的图片按钮。  
+<input name="exampleImage" type="image" src="button.png" alt="提交">  
+提交按钮`submit`：用于提交表单。  
+<input name="exampleSubmit" type="submit" value="提交表单">  
+文件上传框`file`：用于上传文件。  
 <input name="exampleFile" type="file">
 
-value:控件的初始值。
+value:控件的初始值。  
 <input name="exampleText" type="text" value="初始值">
 
-size:控件的初始宽度。
+size:控件的初始宽度。  
 <input name="exampleText" type="text" size="30">
 
-maxlength:控件中最多输入的字符数量。
+maxlength:控件中最多输入的字符数量。  
 <input name="exampleText" type="text" maxlength="1">
 
-checked:单选框或复选框是否被选中。
+checked:单选框或复选框是否被选中。  
 <input name="exampleCheckbox" type="checkbox" checked>
 
 ```html
@@ -223,7 +223,8 @@ checked:单选框或复选框是否被选中。
 <textarea name="comments" rows="5" cols="30">在此输入内容...</textarea>
 
 隐藏域(hidden)
-方便服务端接收一些不需要用户看到的数据
+
+方便服务端接收一些不需要用户看到的数据。
 
 ```html
 <input name="hiddenField" type="hidden" value="隐藏值">
@@ -240,7 +241,7 @@ checked:单选框或复选框是否被选中。
 ```
 
 <textarea name="readonlyField" rows="5" cols="30" readonly>欢迎阅读服务条款</textarea><br>
-同意以上协议<input name="agreement" type="checkbox">
+同意以上协议<input name="agreement" type="checkbox">  
 <input name="disabledField" type="submit" value="提交" disabled>
 
 <h2 id="end">这是结尾</h2>
