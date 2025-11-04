@@ -32,12 +32,11 @@ jobs:
       - name: Install system build dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y build-essential cmake pkg-config \
-            libssl-dev libffi-dev unzip curl
+          sudo apt-get install -y build-essential cmake pkg-config libssl-dev libffi-dev unzip curl
       - name: Clean Ruby cache and lockfile
         run: |
           rm -rf vendor/bundle
-          if [ -f Gemfile.lock ]; then rm Gemfile.lock; fi
+          rm -f Gemfile.lock
       - name: Install dependencies
         run: bundle install --jobs 4 --retry 3
       - name: Setup Pages
