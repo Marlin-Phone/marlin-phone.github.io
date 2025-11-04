@@ -13,8 +13,6 @@ tags:
 
 # JSP 技术详解：JavaWeb 开发的核心组件
 
-您好，Marlin。JSP（JavaServer Pages）是 JavaWeb 开发中一项重要的服务器端技术，它简化了动态网页的创建过程。下面我为您全面解析 JSP 技术的核心内容。
-
 ## 一、JSP 是什么？
 
 JSP 是 Sun Microsystems（现 Oracle）开发的一种**动态网页技术标准**，它允许开发者在 HTML 页面中嵌入 Java 代码，实现动态内容生成。JSP 本质上是 Servlet 的高级抽象，最终会被 Web 容器（如 Tomcat）编译成 Servlet 执行。

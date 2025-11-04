@@ -120,6 +120,7 @@ Servlet 的生命周期由容器管理，分为三个阶段：
 ## 五、核心接口与类
 
 ### 1. 核心接口
+
 | 接口                             | 说明                         |
 | -------------------------------- | ---------------------------- |
 | `javax.servlet.Servlet`          | 最顶层接口，定义生命周期方法 |
@@ -130,6 +131,7 @@ Servlet 的生命周期由容器管理，分为三个阶段：
 | `javax.servlet.http.HttpServlet` | 处理 HTTP 请求的抽象类       |
 
 ### 2. 常用实现类
+
 | 类                           | 说明                   | 典型用途            |
 | ---------------------------- | ---------------------- | ------------------- |
 | `HttpServlet`                | 抽象类，实现 HTTP 协议 | 所有 Web 应用的基类 |
@@ -150,6 +152,7 @@ protected void doDelete(HttpServletRequest req, HttpServletResponse resp) // 处
 ```
 
 ### 2. 关键方法功能
+
 | 方法        | 功能           | 注意事项                     |
 | ----------- | -------------- | ---------------------------- |
 | `init()`    | 初始化资源     | 避免长时间操作，阻塞容器启动 |
@@ -470,8 +473,6 @@ public class RegisterServlet extends HttpServlet {
 - **Servlet → Spring Web MVC → Spring Boot → Spring WebFlux**
 - 虽然框架在演进，但底层仍基于 Servlet API
 - 了解 Servlet 有助于理解上层框架的工作原理
-
----
 
 ## 总结
 
