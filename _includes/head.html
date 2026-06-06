@@ -1,5 +1,23 @@
 <script defer src="https://busuanzi.9420.ltd/js"></script>
+
 <head>
+
+    <!-- 强制跳转到规范域名 -->
+    <script>
+        (function () {
+            var correctDomain = '{{ site.canonical_domain }}';
+            if (window.location.hostname !== correctDomain &&
+                window.location.hostname !== 'localhost' &&
+                window.location.hostname !== '127.0.0.1') {
+                var newPath = window.location.pathname + window.location.search + window.location.hash;
+                window.location.replace('https://' + correctDomain + newPath);
+            }
+        })();
+    </script>
+    <meta charset="utf-8">
+    <!-- ... 后面内容不变 ... -->
+
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />

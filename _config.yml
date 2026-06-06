@@ -1,11 +1,12 @@
 # 网站设置
 title: Marlin's Blog
 SEOTitle: Marlin的博客 | Marlin's Blog
+canonical_domain: "marlin-phone.me"   # ← 新增：规范域名（换域名只改这里）
 header-img: img/home-bg.jpg #这行代码的作用 是在首页显示一个图片，这个图片会覆盖到导航栏下面，所以你应该把你的logo放在img文件夹下面，然后在这里填写img的名字，如下面的'img/home-bg.jpg'
 email: marlin-phone@outlook.com
 description: "这里是 @Marlin 的个人博客，与你一起发现更大的世界 | 本博客正在建设中，内容不全还请见谅"
 keyword: "Marlin, Marlin的博客, Marlin Blog, 博客, 个人网站, 互联网, Web, JavaScript, React, React Native, 前端, 设计"
-url: "https://marlin-phone.github.io" # your host, for absolute URL
+url: "https://marlin-phone.me" # your host, for absolute URL
 baseurl: "" # for example, '/blog' if your blog hosted on 'host/blog' 作用：是在你的网站上建立子文件夹，比如在你的网站上建立一个博客，那么你的博客的url就是你的主机名加上子文件夹的名字，比如 'mywebsite.com/blog'
 
 # Publish posts or collection documents with a future date.
