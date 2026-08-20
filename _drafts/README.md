@@ -18,3 +18,4 @@
 |--------|------|------|
 | 2026-8-21-tailscale-derp-self-host.md | Tailscale 自建 DERP 中继实战 | 📥 待审阅 |
 | 2026-8-21-spring-boot-repackage-common.md | Spring Boot 公共库 repackage 踩坑修复 | 📥 待审阅 |
+| 2026-8-21-tailscale-networking.md | 家庭组网方案推荐 Tailscale | 📥 待审阅 |
